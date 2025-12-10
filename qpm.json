@@ -1,11 +1,12 @@
 {
+  "$schema": "https://raw.githubusercontent.com/QuestPackageManager/QPM.Package/refs/heads/main/qpm.schema.json",
   "version": "0.1.0",
   "sharedDir": "shared",
   "dependenciesDir": "extern",
   "info": {
     "name": "MetaCore",
     "id": "metacore",
-    "version": "1.6.2",
+    "version": "1.7.0",
     "url": "https://github.com/Metalit/MetaCore",
     "additionalData": {
       "overrideSoName": "libmetacore.so",
@@ -38,6 +39,7 @@
         "pwsh ./scripts/pull-tombstone.ps1 -analyze"
       ]
     },
+    "ndk": "^27.3.13750724",
     "qmodIncludeDirs": [
       "./build",
       "./extern/libs"
@@ -48,7 +50,7 @@
   "dependencies": [
     {
       "id": "beatsaber-hook",
-      "versionRange": "^6.4.2",
+      "versionRange": "^7.3.0",
       "additionalData": {}
     },
     {
@@ -60,7 +62,7 @@
     },
     {
       "id": "bs-cordl",
-      "versionRange": "^4008.0.0",
+      "versionRange": "^4100.0.0",
       "additionalData": {}
     },
     {
@@ -75,7 +77,7 @@
     },
     {
       "id": "custom-types",
-      "versionRange": "^0.18.3",
+      "versionRange": "^0.19.0",
       "additionalData": {
         "private": true
       }
@@ -93,6 +95,11 @@
       "additionalData": {
         "private": true
       }
+    },
+    {
+      "id": "flamingo",
+      "versionRange": "^1.1.2",
+      "additionalData": {}
     }
   ]
 }

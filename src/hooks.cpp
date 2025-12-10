@@ -1,6 +1,7 @@
 #include "hooks.hpp"
 
 #include "GlobalNamespace/AnnotatedBeatmapLevelCollectionsViewController.hpp"
+#include "System/Collections/Generic/IReadOnlyList_1.hpp"
 #include "GlobalNamespace/AudioTimeSyncController.hpp"
 #include "GlobalNamespace/BeatmapObjectExecutionRatingsRecorder.hpp"
 #include "GlobalNamespace/BeatmapObjectManager.hpp"
@@ -296,9 +297,9 @@ MAKE_AUTO_HOOK_MATCH(
 // initialize as soon as the scene is loaded
 MAKE_AUTO_HOOK_MATCH(
     GameScenesManager_PushScenes_Delegate,
-    &GameScenesManager::__c__DisplayClass40_0::_PushScenes_b__1,
+    &GameScenesManager::__c__DisplayClass44_0::_PushScenes_b__1,
     void,
-    GameScenesManager::__c__DisplayClass40_0* self,
+    GameScenesManager::__c__DisplayClass44_0* self,
     Zenject::DiContainer* container
 ) {
     CheckInitialize(self->scenesTransitionSetupData);
@@ -309,9 +310,9 @@ MAKE_AUTO_HOOK_MATCH(
 // initialize on level restarts as well
 MAKE_AUTO_HOOK_MATCH(
     GameScenesManager_ReplaceScenes_Delegate_AfterLoad,
-    &GameScenesManager::__c__DisplayClass42_0::_ReplaceScenes_b__2,
+    &GameScenesManager::__c__DisplayClass47_0::_ReplaceScenes_b__2,
     void,
-    GameScenesManager::__c__DisplayClass42_0* self,
+    GameScenesManager::__c__DisplayClass47_0* self,
     Zenject::DiContainer* container
 ) {
     CheckInitialize(self->scenesTransitionSetupData);
@@ -442,9 +443,9 @@ MAKE_AUTO_HOOK_MATCH(
 // track when gameplay scenes are removed
 MAKE_AUTO_HOOK_MATCH(
     GameScenesManager_PopScenes_Delegate,
-    &GameScenesManager::__c__DisplayClass41_0::_PopScenes_b__0,
+    &GameScenesManager::__c__DisplayClass45_0::_PopScenes_b__0,
     void,
-    GameScenesManager::__c__DisplayClass41_0* self,
+    GameScenesManager::__c__DisplayClass45_0* self,
     Zenject::DiContainer* container
 ) {
     CheckSceneFinish();
@@ -455,9 +456,9 @@ MAKE_AUTO_HOOK_MATCH(
 // track when gameplay scenes are replaced for level restarts
 MAKE_AUTO_HOOK_MATCH(
     GameScenesManager_ReplaceScenes_Delegate_AfterUnload,
-    &GameScenesManager::__c__DisplayClass42_0::_ReplaceScenes_b__0,
+    &GameScenesManager::__c__DisplayClass47_0::_ReplaceScenes_b__0,
     void,
-    GameScenesManager::__c__DisplayClass42_0* self,
+    GameScenesManager::__c__DisplayClass47_0* self,
     Zenject::DiContainer* container
 ) {
     CheckSceneFinish();
